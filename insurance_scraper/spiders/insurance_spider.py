@@ -13,6 +13,5 @@ class InsuranceSpider(scrapy.Spider):
     ]
 
     def parse(self, response):
-        page = response.url.split("/")[-2]
-        filename = f'quotes-{page}.html'
+        filename = 'krankenkassenliste.html'
         Path(filename).write_bytes(response.body)
