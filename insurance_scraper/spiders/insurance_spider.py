@@ -13,5 +13,13 @@ class InsuranceSpider(scrapy.Spider):
     ]
 
     def parse(self, response):
-        filename = 'krankenkassenliste.html'
-        Path(filename).write_bytes(response.body)
+        table = response.css('table')[0]
+        tbody = table.css('tbody')
+        for row in tbody[0].css('tr'):
+            yield {
+                'name': row.css('a::text').get(),
+                'link': row.css('a::attr(href)').get(),
+                'fee': row.css('td.alignRight::text').get(),
+                'location': row.css('td::text').get()
+            }
+
