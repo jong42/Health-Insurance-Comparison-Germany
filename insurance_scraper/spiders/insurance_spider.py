@@ -1,4 +1,3 @@
-from pathlib import Path
 import scrapy
 
 
@@ -23,3 +22,7 @@ class InsuranceSpider(scrapy.Spider):
                 'location': row.css('td::text').get()
             }
 
+        next_page = response.css('div.clearfix.pager a.next::attr(href)').get()
+        if next_page is not None:
+            next_page = response.urljoin(next_page)
+            yield scrapy.Request(next_page, callback=self.parse)
