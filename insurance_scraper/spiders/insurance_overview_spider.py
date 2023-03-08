@@ -35,13 +35,6 @@ class AokniedersachsenSpider(scrapy.Spider):
     """
     name = "AOK_Niedersachsen"
 
-    #start_urls = [
-    #    'https://www.aok.de/pk/niedersachsen/',
-    #    'http://www.aok.de/hessen',
-    #    'http://www.aok.de/baden-wuerttemberg/index.php',
-    #    'http: // www.bergische - krankenkasse.de'
-    #
-    #]
 
     start_urls = [
     'file:///home/jonas/Desktop/insurance_scraper/Krankenkassen.de.html'
@@ -51,13 +44,19 @@ class AokniedersachsenSpider(scrapy.Spider):
         nav_page = response.css('div.js-nav-page-wrapper')[0]
         outer_grid = nav_page.css('div.outer-grid').css('div.outer-grid__content.inner-grid.\|.page').css('main')[0]
         frame_link = outer_grid.css('div.page-main__content').css('div.page-main__text iframe::attr(src)')[0].get()
+        frame_link = response.urljoin(frame_link)
         yield scrapy.Request(frame_link, callback=self.parse_frame)
 
 
     def parse_frame(self, response):
-        Path('frame.html').write_bytes(response.body)
+
+        for table in response.css('table tbody'):
+            provider = 
+            for row in table.css('tr'):
+                yield {
+                    'name': row.css('td.table__data-leistung::text').get(),
+                    'icon': row.css('td.table__data-icon').get()
+                }
 
 
 
-#link = response.css('header')[0].css('nav')[0].css('div.relative.overflow-hidden div ul')[0].css('li a::attr(href)')[
-#            0].get()
