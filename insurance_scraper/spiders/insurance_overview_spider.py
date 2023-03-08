@@ -57,7 +57,7 @@ class AokniedersachsenSpider(scrapy.Spider):
                     yield {
                         'provider': provider,
                         'name': row.css('td.table__data-leistung::text').get(),
-                        'icon': row.css('td.table__data-icon').get()
+                        'icon': row.css('td.table__data-icon i::attr(class)').get()
                     }
 
 
