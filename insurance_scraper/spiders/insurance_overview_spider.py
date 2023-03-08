@@ -50,13 +50,15 @@ class AokniedersachsenSpider(scrapy.Spider):
 
     def parse_frame(self, response):
 
-        for table in response.css('table tbody'):
-            provider = 
-            for row in table.css('tr'):
-                yield {
-                    'name': row.css('td.table__data-leistung::text').get(),
-                    'icon': row.css('td.table__data-icon').get()
-                }
+        for block in response.css('div.angebot__tarifdetails.mt-400.sm\:mt-700-n.width-full'):
+            provider = block.css('div.fs-450.fw-bolder.lh-200.none.xs\:block.s\:width-5\/12.sm\:width-5\/12.ph-400.sm\:pl-0::text')[0].get()
+            for table in block.css('table tbody'):
+                for row in table.css('tr'):
+                    yield {
+                        'provider': provider,
+                        'name': row.css('td.table__data-leistung::text').get(),
+                        'icon': row.css('td.table__data-icon').get()
+                    }
 
 
 
