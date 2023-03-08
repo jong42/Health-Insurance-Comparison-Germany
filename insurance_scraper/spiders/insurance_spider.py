@@ -1,11 +1,11 @@
 import scrapy
 
 
-class InsuranceSpider(scrapy.Spider):
+class InsuranceOverviewSpider(scrapy.Spider):
     """
-    Scrape data about fees and services from german health insurance providers
+    Scrape data about fees and location from german health insurance providers
     """
-    name = "insurance"
+    name = "insurance_overview"
 
     start_urls = [
         'https://www.gkv-spitzenverband.de/service/krankenkassenliste/krankenkassen.jsp',
