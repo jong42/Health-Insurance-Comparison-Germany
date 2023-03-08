@@ -54,10 +54,15 @@ class AokniedersachsenSpider(scrapy.Spider):
             provider = block.css('div.fs-450.fw-bolder.lh-200.none.xs\:block.s\:width-5\/12.sm\:width-5\/12.ph-400.sm\:pl-0::text')[0].get()
             for table in block.css('table tbody'):
                 for row in table.css('tr'):
+                    icon = row.css('td.table__data-icon i::attr(class)').get()
+                    if icon == "kk-icon kk-icon-check u-color-signal-green": offered = True
+                    elif icon == "kk-icon kk-icon-minus u-color-signal-red": offered = False
+                    else: raise ValueError('unknown icon value: ' + icon)
+
                     yield {
                         'provider': provider,
-                        'name': row.css('td.table__data-leistung::text').get(),
-                        'icon': row.css('td.table__data-icon i::attr(class)').get()
+                        'service': row.css('td.table__data-leistung::text').get(),
+                        'offered': offered
                     }
 
 
