@@ -1,12 +1,11 @@
 import scrapy
-from pathlib import Path
 
 
-class InsuranceOverviewSpider(scrapy.Spider):
+class InsuranceFeeSpider(scrapy.Spider):
     """
     Scrape data about fees and location from german health insurance providers
     """
-    name = "insurance_overview"
+    name = "fees"
 
     start_urls = [
         'https://www.gkv-spitzenverband.de/service/krankenkassenliste/krankenkassen.jsp',
@@ -29,11 +28,11 @@ class InsuranceOverviewSpider(scrapy.Spider):
             yield scrapy.Request(next_page, callback=self.parse)
 
 
-class AokniedersachsenSpider(scrapy.Spider):
+class ServicesSpider(scrapy.Spider):
     """
-    Scrape data about services from AOK Niedersachsen
+    Scrape data about services offered from german health insurance providers
     """
-    name = "AOK_Niedersachsen"
+    name = "services"
 
     def start_requests(self):
         urls = [
@@ -83,6 +82,3 @@ class AokniedersachsenSpider(scrapy.Spider):
                         'service': row.css('td.table__data-leistung::text').get(),
                         'offered': offered
                     }
-
-    def parse_download(self, response):
-        Path('fullpage.html').write_bytes(response.body)
