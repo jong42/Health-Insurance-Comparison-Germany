@@ -35,10 +35,12 @@ class AokniedersachsenSpider(scrapy.Spider):
     """
     name = "AOK_Niedersachsen"
 
-
-    start_urls = [
-    'file:///home/jonas/Desktop/insurance_scraper/Krankenkassen.de.html'
-    ]
+    def start_requests(self):
+        urls = [
+            'https://www.krankenkassen.de/krankenkassen-vergleich/vergleich/?berechnung%5Bberufsgruppe%5D=arbeitnehmer&berechnung%5Bbundesland%5D=bundesweit&berechnung%5BmonatlichesBruttoEinkommen%5D=4000&absenden=&berechnung%5Bsortierreihenfolge%5D=&berechnung%5Breferrer%5D=&berechnung%5BempfehlungenAnzeigen%5D=1'
+        ]
+        for url in urls:
+            yield scrapy.Request(url=url, callback=self.parse)
 
     def parse(self, response):
         nav_page = response.css('div.js-nav-page-wrapper')[0]
@@ -49,10 +51,9 @@ class AokniedersachsenSpider(scrapy.Spider):
 
 
     def parse_frame(self, response):
-
         for block in response.css('div.angebot__tarifdetails.mt-400.sm\:mt-700-n.width-full'):
             provider = block.css('div.fs-450.fw-bolder.lh-200.none.xs\:block.s\:width-5\/12.sm\:width-5\/12.ph-400.sm\:pl-0::text')[0].get()
-            for table in block.css('table tbody'):
+            for table in block.css('table'):
                 for row in table.css('tr'):
                     icon = row.css('td.table__data-icon i::attr(class)').get()
                     if icon == "kk-icon kk-icon-check u-color-signal-green": offered = True
@@ -65,5 +66,5 @@ class AokniedersachsenSpider(scrapy.Spider):
                         'offered': offered
                     }
 
-
-
+    def parse_download(self, response):
+        Path('fullpage.html').write_bytes(response.body)
