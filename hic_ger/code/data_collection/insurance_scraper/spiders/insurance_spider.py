@@ -19,7 +19,7 @@ class InsuranceFeeSpider(scrapy.Spider):
                 'name': row.css('a::text').get(),
                 'link': row.css('a::attr(href)').get(),
                 'fee': row.css('td.alignRight::text').get(),
-                'location': row.css('td::text').get()
+                'location': row.css('td::text')[1].get()
             }
 
         next_page = response.css('div.clearfix.pager a.next::attr(href)').get()
