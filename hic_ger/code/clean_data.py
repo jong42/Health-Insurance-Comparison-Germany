@@ -37,10 +37,31 @@ fees_df = pd.read_json(fees_path)
 # Remove redundant symbols
 fees_df['name'] = fees_df['name'].str[2:-5]
 fees_df['fee'] = fees_df['fee'].str[1:-2]
+fees_df['location'] = fees_df['location'].str[1:-1]
 
 # Remove row where no fee was given
 index_to_drop = np.where(fees_df['fee'] == 'wird nicht erhobe')[0][0]
 fees_df = fees_df.drop(index_to_drop, axis=0)
+
+# Remove providers that are company-specific
+pos_to_drop = np.where(fees_df['location'] == 'betriebs\xadbe\xadzogen (nur für Mitar\xadbeitende wählbar)')[0]
+index_to_drop = fees_df.iloc[np.where(fees_df['location'] == 'betriebs\xadbe\xadzogen (nur für Mitar\xadbeitende wählbar)')[0],:].index
+fees_df = fees_df.drop(index_to_drop, axis=0)
+
+# Convert multivalue location column to multiple columns
+states = ['Bayern','Baden-Württemberg', 'Berlin', 'Brandenburg', 'Bremen', 'Hamburg', 'Hessen',
+                  'Mecklenburg-Vorpommern', 'Niedersachsen', 'Nordrhein-Westfalen', 'Rheinland-Pfalz', 'Saarland',
+                  'Sachsen', 'Sachsen-Anhalt', 'Schleswig-Holstein', 'Thüringen']
+
+for state in states:
+    fees_df[state] = False
+
+for i, loc in enumerate(fees_df['location']):
+    loc = loc.split(',')
+    loc = [i.strip() for i in loc]
+    for state in states:
+        if state in loc or loc == ['bundesweit']:
+            fees_df[state][i] = True
 
 # Convert fee to float type
 fees_df['fee'] = fees_df['fee'].str.replace(',','.')
