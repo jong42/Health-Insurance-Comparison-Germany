@@ -4,7 +4,8 @@ import pandas as pd
 
 fees_path = '../data/fees.json'
 services_path = '../data/services.json'
-out_path = '../data/data_cleaned.csv'
+out_path_providers = '../data/providers_cleaned.csv'
+out_path_states = '../data/states_cleaned.csv'
 
 ##################################
 ### Services
@@ -48,8 +49,12 @@ pos_to_drop = np.where(fees_df['location'] == 'betriebs\xadbe\xadzogen (nur für
 index_to_drop = fees_df.iloc[np.where(fees_df['location'] == 'betriebs\xadbe\xadzogen (nur für Mitar\xadbeitende wählbar)')[0],:].index
 fees_df = fees_df.drop(index_to_drop, axis=0)
 
+# Reset index
+new_index = np.arange(len(fees_df))
+fees_df = fees_df.set_index(new_index)
+
 # Convert multivalue location column to multiple columns
-states = ['Bayern','Baden-Württemberg', 'Berlin', 'Brandenburg', 'Bremen', 'Hamburg', 'Hessen',
+states = ['Bayern', 'Baden-Württemberg', 'Berlin', 'Brandenburg', 'Bremen', 'Hamburg', 'Hessen',
                   'Mecklenburg-Vorpommern', 'Niedersachsen', 'Nordrhein-Westfalen', 'Rheinland-Pfalz', 'Saarland',
                   'Sachsen', 'Sachsen-Anhalt', 'Schleswig-Holstein', 'Thüringen']
 
@@ -92,7 +97,14 @@ services_df['provider'][services_df['provider'] == 'mhplus Krankenkasse'] = 'mhp
 
 # Merge dataframes
 df_merged = pd.merge(fees_df, services_df, left_on='name', right_on='provider')
-df_merged.to_csv(out_path)
+df_merged.to_csv(out_path_providers)
 
 # Get list of missing providers
 missing_providers = [name for name in fees_df['name'] if name not in df_merged['name'].values]
+
+
+##################################
+### Create df with states as rows
+##################################
+
+df_states = df_merged.set_index(df_merged['name']).iloc[:, 4:20].T
