@@ -107,4 +107,13 @@ missing_providers = [name for name in fees_df['name'] if name not in df_merged['
 ### Create df with states as rows
 ##################################
 
-df_states = df_merged.set_index(df_merged['name']).iloc[:, 4:20].T
+states = ['Bayern', 'Baden-Württemberg', 'Berlin', 'Brandenburg', 'Bremen', 'Hamburg', 'Hessen',
+                  'Mecklenburg-Vorpommern', 'Niedersachsen', 'Nordrhein-Westfalen', 'Rheinland-Pfalz', 'Saarland',
+                  'Sachsen', 'Sachsen-Anhalt', 'Schleswig-Holstein', 'Thüringen']
+
+df_states = pd.DataFrame(index=states)
+df_states['provider_count'] = np.sum(df_merged.iloc[:, 4:20], axis=0)
+df_states['avg_fee'] = [np.sum(df_merged['fee']*df_merged[state])/np.sum(df_merged[state]) for state in states]
+df_states['avg_services_count'] = [np.sum(df_merged['services_count']*df_merged[state])/np.sum(df_merged[state]) for state in states]
+
+df_states.to_csv(out_path_states)
