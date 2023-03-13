@@ -9,6 +9,19 @@ states_map_path = "../../data/german_states.geo.json"
 df_prov = pd.read_csv(providers_path, index_col=0)
 df_states = pd.read_csv(states_path, index_col=0)
 
+#Create box plots
+fig_fee = px.box(df_prov, y='fee')
+fig_services = px.box(df_prov, y='services_count')
+fig_avgfees = px.box(df_states, y='avg_fee')
+fig_avgservices = px.box(df_states, y='avg_services_count')
+fig_provider = px.box(df_states, y='provider_count')
+
+box_plot_fees = dcc.Graph(id='box plot fees', figure=fig_fee)
+box_plot_services = dcc.Graph(id='box plot services', figure=fig_services)
+box_plot_avgfees = dcc.Graph(id='box plot avgfees', figure=fig_avgfees)
+box_plot_avgservices = dcc.Graph(id='box plot avgservices', figure=fig_avgservices)
+box_plot_provider = dcc.Graph(id='box plot provider', figure=fig_provider)
+
 # Create bar plots
 fig = px.bar(df_prov.sort_values('fee'), 'fee', 'name',
              title='Additional Fees charged by each Provider',
@@ -25,7 +38,6 @@ bar_plot_services = dcc.Graph(id='bar plot services', figure=fig)
 fig = px.bar(df_states.sort_values('provider_count'), 'provider_count', 'state',
              title='Number of Providers per State',
              labels={'provider_count': 'Number of Providers'})
-#fig.update_yaxes(showticklabels=False)
 fig.update_yaxes(title_text='')
 bar_plot_states = dcc.Graph(id='bar plot states', figure=fig)
 
@@ -97,7 +109,13 @@ app = Dash(__name__)
 # Define the app
 app.layout = html.Div(children=[
     html.H2('Health Insurance Comparison', className='row'),
-    html.Div('Text Information', className='row'),
+    html.Div(className='row', children=[
+        html.Div(box_plot_fees, className='column'),
+        html.Div(box_plot_services, className='column'),
+        html.Div(box_plot_avgfees, className='column'),
+        html.Div(box_plot_avgservices, className='column'),
+        html.Div(box_plot_provider, className='column')
+    ]),
     html.Div(className='column', children=[
         html.Div(bar_plot_fees),
         html.Div(bar_plot_services),
