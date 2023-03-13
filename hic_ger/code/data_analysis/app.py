@@ -10,11 +10,23 @@ df_prov = pd.read_csv(providers_path)
 df_states = pd.read_csv(states_path)
 
 # Create bar plots
-fig = px.bar(df_prov, 'fee', 'name')
+fig = px.bar(df_prov.sort_values('fee'), 'fee', 'name',
+             title='Additional Fees charged by each Provider',
+             labels={'fee': 'Additional Fees (%)'})
+fig.update_yaxes(showticklabels=False)
+fig.update_yaxes(title_text='')
 bar_plot_fees = dcc.Graph(id='bar plot fees', figure=fig)
-fig = px.bar(df_prov, 'services_count', 'name')
+fig = px.bar(df_prov.sort_values('services_count'), 'services_count', 'name',
+             title='Number of Services offered by each Provider',
+             labels={'services_count':'Number of Services offered'})
+fig.update_yaxes(showticklabels=False)
+fig.update_yaxes(title_text='')
 bar_plot_services = dcc.Graph(id='bar plot services', figure=fig)
-fig = px.bar(df_states, 'provider_count', 'Unnamed: 0')
+fig = px.bar(df_states.sort_values('provider_count'), 'provider_count', 'Unnamed: 0',
+             title='Number of Providers per State',
+             labels={'provider_count': 'Number of Providers'})
+#fig.update_yaxes(showticklabels=False)
+fig.update_yaxes(title_text='')
 bar_plot_states = dcc.Graph(id='bar plot states', figure=fig)
 
 # Create maps
