@@ -80,8 +80,14 @@ map_plot_services = dcc.Graph(id='map plot services', figure=fig_services)
 map_plot_providers = dcc.Graph(id='map plot providers', figure=fig_providers)
 
 #Create scatter plots
-fig_prov = px.scatter(df_prov, x='fee', y='services_count')
-fig_states = px.scatter(df_states, x='avg_fee', y='avg_services_count')
+fig_prov = px.scatter(df_prov, x='fee', y='services_count',
+                      labels={'fee':'Additional Fees (%)', 'services_count': 'Number of Services offered'},
+                      hover_name='name',
+                      title='Correlation between Fees and Number of Services offered by providers')
+fig_states = px.scatter(df_states, x='avg_fee', y='avg_services_count',
+                        labels={'avg_fee':'Average Fees (%)', 'avg_services_count': 'Average Number of Services Offered'},
+                        hover_name='state',
+                        title='Correlation between Average Fee and Average Number of Services Offered in German States')
 scatter_plot_prov = dcc.Graph(id='scatter plot prov', figure=fig_prov)
 scatter_plot_states = dcc.Graph(id='scatter plot states', figure=fig_states)
 
