@@ -6,8 +6,8 @@ import json
 providers_path = "../../data/providers_cleaned.csv"
 states_path = "../../data/states_cleaned.csv"
 states_map_path = "../../data/german_states.geo.json"
-df_prov = pd.read_csv(providers_path)
-df_states = pd.read_csv(states_path)
+df_prov = pd.read_csv(providers_path, index_col=0)
+df_states = pd.read_csv(states_path, index_col=0)
 
 # Create bar plots
 fig = px.bar(df_prov.sort_values('fee'), 'fee', 'name',
@@ -22,7 +22,7 @@ fig = px.bar(df_prov.sort_values('services_count'), 'services_count', 'name',
 fig.update_yaxes(showticklabels=False)
 fig.update_yaxes(title_text='')
 bar_plot_services = dcc.Graph(id='bar plot services', figure=fig)
-fig = px.bar(df_states.sort_values('provider_count'), 'provider_count', 'Unnamed: 0',
+fig = px.bar(df_states.sort_values('provider_count'), 'provider_count', 'state',
              title='Number of Providers per State',
              labels={'provider_count': 'Number of Providers'})
 #fig.update_yaxes(showticklabels=False)
@@ -37,29 +37,43 @@ fig_fees = px.choropleth_mapbox(df_states,
                                 geojson=geojson_states,
                                 color='avg_fee',
                                 featureidkey='properties.name',
-                                locations='Unnamed: 0',
+                                locations='state',
                                 center={"lat": 51.1656, "lon": 10.4515},
                                 zoom=4,
-                                mapbox_style="white-bg"
+                                mapbox_style="white-bg",
+                                labels={'avg_fee': 'average fee(%)'},
+                                title='Average Fees per State',
+                                color_continuous_scale='blues',
+                                range_color=[1.4,1.5]
                                 )
 fig_services = px.choropleth_mapbox(df_states,
                                     geojson=geojson_states,
                                     color='avg_services_count',
                                     featureidkey='properties.name',
-                                    locations='Unnamed: 0',
+                                    locations='state',
                                     center={"lat": 51.1656, "lon": 10.4515},
                                     zoom=4,
-                                    mapbox_style="white-bg"
+                                    mapbox_style="white-bg",
+                                    labels={'avg_services_count': 'average number of services'},
+                                    title='Average Number of Services per State',
+                                    color_continuous_scale='blues',
+                                    range_color=[95,105]
                                     )
 fig_providers = px.choropleth_mapbox(df_states,
                                      geojson=geojson_states,
                                      color='provider_count',
                                      featureidkey='properties.name',
-                                     locations='Unnamed: 0',
+                                     locations='state',
                                      center={"lat": 51.1656, "lon": 10.4515},
                                      zoom=4,
-                                     mapbox_style="white-bg"
+                                     mapbox_style="white-bg",
+                                     labels={'provider_count': 'number of providers'},
+                                     title='Number of Providers per State',
+                                     color_continuous_scale='blues',
+                                     range_color=[35,45]
                                      )
+
+
 
 map_plot_fees = dcc.Graph(id='map plot fees', figure=fig_fees)
 map_plot_services = dcc.Graph(id='map plot services', figure=fig_services)
