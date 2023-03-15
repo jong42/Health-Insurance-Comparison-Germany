@@ -46,6 +46,16 @@ fig = px.bar(df_states.sort_values('provider_count'), 'provider_count', 'state',
              labels={'provider_count': 'Number of Providers'})
 fig.update_yaxes(title_text='')
 bar_plot_states = dcc.Graph(id='bar plot states', figure=fig)
+fig = px.bar(df_states.sort_values('avg_fee'), 'avg_fee', 'state',
+             title='Average Fee by State',
+             labels={'avg_fee': 'Average Fee'})
+fig.update_yaxes(title_text='')
+bar_plot_avgfees = dcc.Graph(id='bar plot avgfees', figure=fig)
+fig = px.bar(df_states.sort_values('avg_services_count'), 'avg_services_count', 'state',
+             title='Average Number of Services by State',
+             labels={'avg_services_count': 'Average number of services'})
+fig.update_yaxes(title_text='')
+bar_plot_avgservices = dcc.Graph(id='bar plot avgservices', figure=fig)
 
 # Create maps
 with open(states_map_path) as f:
@@ -115,27 +125,62 @@ app = Dash(__name__)
 # Define the app
 app.layout = html.Div(children=[
     html.H2('Health Insurance Comparison', className='row'),
+    html.H3('Explanation', className='row'),
+    html.Div(
+        'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et '
+        'dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet '
+        'clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, '
+        'consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, '
+        'sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, '
+        'no sea takimata sanctus est Lorem ipsum dolor sit amet.',
+        className='row'
+    ),
+    html.H3('Group By Providers', className='row'),
+    html.Div(bar_plot_fees, className='column'),
+    html.Div(bar_plot_services, className='column'),
+    html.Div(scatter_plot_prov, className='column'),
+    #html.Div(className='column', children=[
+    #    html.Div(box_plot_fees),
+    #    html.Div(box_plot_services)
+    #]),
+    #html.Div(className='column', children=[
+    #    html.Div(bar_plot_fees),
+    #    html.Div(bar_plot_services)
+    #]),
+    #html.Div(className='column', children=[
+    #    html.Div(scatter_plot_prov)
+    #]),
+    html.H3('Group By States', className='row'),
+    #html.Div(className='row', children=[
+    #    html.Div(box_plot_avgfees, className='column'),
+    #    html.Div(box_plot_avgservices, className='column'),
+    #    html.Div(box_plot_provider, className='column')
+    #]),
     html.Div(className='row', children=[
-        html.Div(box_plot_fees, className='column'),
-        html.Div(box_plot_services, className='column'),
-        html.Div(box_plot_avgfees, className='column'),
-        html.Div(box_plot_avgservices, className='column'),
-        html.Div(box_plot_provider, className='column')
+        html.Div(bar_plot_avgfees, className='column'),
+        html.Div(bar_plot_avgservices, className='column'),
+        html.Div(bar_plot_states, className='column')
     ]),
-    html.Div(className='column', children=[
-        html.Div(bar_plot_fees),
-        html.Div(bar_plot_services),
-        html.Div(bar_plot_states)
+    html.Div(className='row', children=[
+        html.Div(map_plot_fees, className='column'),
+        html.Div(map_plot_services, className='column'),
+        html.Div(map_plot_providers, className='column')
     ]),
-    html.Div(className='column', children=[
-        html.Div(map_plot_fees),
-        html.Div(map_plot_services),
-        html.Div(map_plot_providers)
+    html.Div(className='row', children=[
+        html.Div(className='column'),
+        html.Div(scatter_plot_states, className='column')
     ]),
-    html.Div(className='column', children=[
-        html.Div(scatter_plot_prov),
-        html.Div(scatter_plot_states)
-    ])
+    html.H3('Conclusion', className='row'),
+    html.Div(
+        'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et '
+        'dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet '
+        'clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, '
+        'consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, '
+        'sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, '
+        'no sea takimata sanctus est Lorem ipsum dolor sit amet.',
+        className='row'
+    ),
+    html.Div(className='bottomrow')
 ])
 
 # Run the app

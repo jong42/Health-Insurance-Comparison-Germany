@@ -2,10 +2,16 @@
 	width: 100%;
 	float: right;
 	box-sizing: border-box;
-	color: green;
 	background-color: white;
 }
 
+.bottomrow {
+	width: 100%;
+	float: right;
+	box-sizing: border-box;
+	background-color: white;
+	margin-bottom: 20px;
+}
 .column {
 	width: 33.3333%;
 	box-sizing: border-box;
