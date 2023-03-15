@@ -1,8 +1,9 @@
 .row {
-	width: 100%;
-	float: right;
 	box-sizing: border-box;
 	background-color: white;
+	text-align: justify;
+	margin-left: 10px;
+	margin-right: 10px;
 }
 
 .bottomrow {
