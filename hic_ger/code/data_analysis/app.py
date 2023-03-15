@@ -10,11 +10,17 @@ df_prov = pd.read_csv(providers_path, index_col=0)
 df_states = pd.read_csv(states_path, index_col=0)
 
 #Create box plots
-fig_fee = px.box(df_prov, y='fee')
-fig_services = px.box(df_prov, y='services_count')
-fig_avgfees = px.box(df_states, y='avg_fee')
-fig_avgservices = px.box(df_states, y='avg_services_count')
-fig_provider = px.box(df_states, y='provider_count')
+fig_fee = px.box(df_prov, y='fee', title='Fee by Providers')
+fig_services = px.box(df_prov, y='services_count', title='Number of Services Offered by Providers')
+fig_avgfees = px.box(df_states, y='avg_fee', title ='Average Fee by State')
+fig_avgservices = px.box(df_states, y='avg_services_count', title='Average Number of Services by State')
+fig_provider = px.box(df_states, y='provider_count', title='Number of Providers by State')
+
+fig_fee.update_yaxes(title_text='')
+fig_services.update_yaxes(title_text='')
+fig_avgfees.update_yaxes(title_text='')
+fig_avgservices.update_yaxes(title_text='')
+fig_provider.update_yaxes(title_text='')
 
 box_plot_fees = dcc.Graph(id='box plot fees', figure=fig_fee)
 box_plot_services = dcc.Graph(id='box plot services', figure=fig_services)
