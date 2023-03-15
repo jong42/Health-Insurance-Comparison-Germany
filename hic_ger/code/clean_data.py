@@ -8,7 +8,7 @@ out_path_providers = '../data/providers_cleaned.csv'
 out_path_states = '../data/states_cleaned.csv'
 
 ##################################
-### Services
+# Services
 ##################################
 services_df = pd.read_json(services_path)
 
@@ -27,10 +27,10 @@ cols_to_drop = ['Zuschuss zu Alternativen Heilmethoden nur über Bonusprogramm',
 services_df = services_df.drop(cols_to_drop, axis=1)
 
 # Count total number of services offered by each provider
-services_df['services_count'] = services_df.iloc[:,:-1].sum(axis=1)
+services_df['services_count'] = services_df.iloc[:, :-1].sum(axis=1)
 
 ##################################
-### Fees
+# Fees
 ##################################
 
 fees_df = pd.read_json(fees_path)
@@ -73,7 +73,7 @@ fees_df['fee'] = fees_df['fee'].str.replace(',','.')
 fees_df['fee'] = fees_df['fee'].astype(float)
 
 ##################################
-### Merge both dataframes
+# Merge both dataframes
 ##################################
 
 # Align company names
@@ -99,12 +99,8 @@ services_df['provider'][services_df['provider'] == 'mhplus Krankenkasse'] = 'mhp
 df_merged = pd.merge(fees_df, services_df, left_on='name', right_on='provider')
 df_merged.to_csv(out_path_providers)
 
-# Get list of missing providers
-missing_providers = [name for name in fees_df['name'] if name not in df_merged['name'].values]
-
-
 ##################################
-### Create df with states as rows
+# Create df with states as rows
 ##################################
 
 states = ['Bayern', 'Baden-Württemberg', 'Berlin', 'Brandenburg', 'Bremen', 'Hamburg', 'Hessen',
