@@ -1,0 +1,74 @@
+,name,link,fee,location,Bayern,Baden-Württemberg,Berlin,Brandenburg,Bremen,Hamburg,Hessen,Mecklenburg-Vorpommern,Niedersachsen,Nordrhein-Westfalen,Rheinland-Pfalz,Saarland,Sachsen,Sachsen-Anhalt,Schleswig-Holstein,Thüringen
+0,AOK - Die Gesundheitskasse für Niedersachsen,http://www.aok.de/niedersachsen,1.5,Niedersachsen,False,False,False,False,False,False,False,False,True,False,False,False,False,False,False,False
+1,AOK - Die Gesundheitskasse in Hessen,http://www.aok.de/hessen,1.6,Hessen,False,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False
+2,AOK Baden-Württemberg,http://www.aok.de/baden-wuerttemberg/index.php,1.6,Baden-Württemberg,False,True,False,False,False,False,False,False,False,False,False,False,False,False,False,False
+3,AOK Bayern - Die Gesundheitskasse,http://www.aok.de/bayern,1.58,Bayern,True,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False
+4,AOK Bremen / Bremerhaven,http://www.aok.de/bremen,1.6,Bremen,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+5,AOK Nordost - Die Gesundheitskasse,http://www.aok.de/nordost/,1.9,"Berlin, Brandenburg, Mecklenburg-Vorpommern",False,False,True,True,False,False,False,True,False,False,False,False,False,False,False,False
+6,AOK NordWest - Die Gesundheitskasse,http://www.aok.de/nordwest,1.89,"Nordrhein-Westfalen, Schleswig-Holstein",False,False,False,False,False,False,False,False,False,True,False,False,False,False,True,False
+7,AOK PLUS - Die Gesundheitskasse für Sachsen und   Thüringe,http://www.aok.de/aokplus,1.5,"Sachsen, Thüringen",False,False,False,False,False,False,False,False,False,False,False,False,True,False,False,True
+8,AOK Rheinland/Hamburg - Die Gesundheitskasse,http://www.aok.de/rheinland-hamburg,1.8,"Hamburg, Nordrhein-Westfalen",False,False,False,False,False,True,False,False,False,True,False,False,False,False,False,False
+9,AOK Rheinland-Pfalz/Saarland-Die Gesundheitskasse,http://www.aok.de/rheinland-pfalz-saarland/,1.8,"Rheinland-Pfalz, Saarland",False,False,False,False,False,False,False,False,False,False,True,True,False,False,False,False
+10,AOK Sachsen-Anhalt - Die Gesundheitskasse,http://www.aok.de/sachsen-anhalt,1.0,Sachsen-Anhalt,False,False,False,False,False,False,False,False,False,False,False,False,False,True,False,False
+11,Audi BKK,http://www.Audibkk.de,1.25,bundesweit,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True
+12,BAHN-BKK,http://www.bahn-bkk.de,1.7,bundesweit,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True
+13,BARMER,http://www.barmer.de,1.5,bundesweit,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True
+14,BERGISCHE KRANKENKASSE,http://www.bergische-krankenkasse.de,1.6,"Hamburg, Hessen, Nordrhein-Westfalen",False,False,False,False,False,True,True,False,False,True,False,False,False,False,False,False
+15,Bertelsmann BKK,http://www.bertelsmann-bkk.de,1.4,"Baden-Württemberg, Bayern, Berlin, Hamburg, Niedersachsen, Nordrhein-Westfalen, Sachsen, Thüringen",True,True,True,False,False,True,False,False,True,True,False,False,True,False,False,True
+16,Betriebskrankenkasse Mobil,http://www.mobil-krankenkasse.de,1.49,bundesweit,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True
+17,BIG direkt gesund,http://www.big-direkt.de,1.45,bundesweit,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True
+18,BKK Akzo Nobel Bayern,http://www.bkk-akzo.de,1.55,Bayern,True,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False
+19,BKK Diakonie,http://www.bkk-diakonie.de,1.6,"Baden-Württemberg, Bayern, Berlin, Brandenburg, Bremen, Hamburg, Hessen, Mecklenburg-Vorpommern, Niedersachsen, Nordrhein-Westfalen, Rheinland-Pfalz, Sachsen, Sachsen-Anhalt, Schleswig-Holstein",True,True,True,True,True,True,True,True,True,True,True,False,True,True,True,False
+20,BKK EUREGIO,http://www.bkk-euregio.de,0.84,"Hamburg, Nordrhein-Westfalen",False,False,False,False,False,True,False,False,False,True,False,False,False,False,False,False
+21,BKK exklusiv,http://www.bkkexklusiv.de,1.99,"Bremen, Mecklenburg-Vorpommern, Niedersachsen, Nordrhein-Westfalen, Sachsen-Anhalt, Schleswig-Holstein",False,False,False,False,True,False,False,True,True,True,False,False,False,True,True,False
+22,BKK Faber-Castell & Partner,http://www.bkk-faber-castell.de,1.35,Bayern,True,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False
+23,BKK firmus,http://www.bkk-firmus.de,0.9,bundesweit,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True
+24,BKK Freudenberg,http://www.bkk-freudenberg.de,1.5,"Baden-Württemberg, Bayern, Berlin, Hessen, Niedersachsen, Nordrhein-Westfalen, Rheinland-Pfalz, Sachsen",True,True,True,False,False,False,True,False,True,True,True,False,True,False,False,False
+25,BKK GILDEMEISTER SEIDENSTICKER,http://www.bkkgilsei.de,0.9,bundesweit,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True
+26,BKK Herkules,http://www.bkk-herkules.de/,1.09,"Bayern, Hessen, Niedersachsen",True,False,False,False,False,False,True,False,True,False,False,False,False,False,False,False
+27,BKK Linde,http://www.bkk-linde.de,1.5,bundesweit,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True
+28,bkk melitta hmr,http://www.bkk-melitta-hmr.de/,1.4,"Baden-Württemberg, Bayern, Brandenburg, Bremen, Hessen, Niedersachsen, Nordrhein-Westfalen, Sachsen, Sachsen-Anhalt, Schleswig-Holstein",True,True,False,True,True,False,True,False,True,True,False,False,True,True,True,False
+29,BKK PFAFF ,http://www.bkk-pfaff.de,0.8,Rheinland-Pfalz,False,False,False,False,False,False,False,False,False,False,True,False,False,False,False,False
+30,BKK Pfalz,http://www.bkkpfalz.de,1.55,bundesweit,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True
+31,BKK ProVita,http://www.bkk-provita.de/,1.49,bundesweit,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True
+32,BKK Public,http://www.bkk-public.de,1.5,"Hamburg, Niedersachsen, Nordrhein-Westfalen",False,False,False,False,False,True,False,False,True,True,False,False,False,False,False,False
+33,BKK Scheufelen,http://www.bkk-scheufelen.de,1.4,Baden-Württemberg,False,True,False,False,False,False,False,False,False,False,False,False,False,False,False,False
+34,BKK Schwarzwald-Baar-Heuberg,http://www.bkk-sbh.de,0.98,Baden-Württemberg,False,True,False,False,False,False,False,False,False,False,False,False,False,False,False,False
+35,BKK Technoform,http://www.bkk-technoform.de,1.5,"Baden-Württemberg, Bayern, Niedersachsen, Rheinland-Pfalz",True,True,False,False,False,False,False,False,True,False,True,False,False,False,False,False
+36,BKK Textilgruppe Hof,http://www.bkk-textilgruppe-hof.de,0.9,Bayern,True,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False
+37,BKK VDN,http://www.bkk-vdn.de,1.5,"Hamburg, Nordrhein-Westfalen, Sachsen",False,False,False,False,False,True,False,False,False,True,False,False,True,False,False,False
+38,BKK VerbundPlus,http://www.bkk-verbundplus.de,1.35,bundesweit,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True
+39,BKK Verkehrsbau Union (BKK VBU) ,http://www.meine-krankenkasse.de,1.8,bundesweit,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True
+40,BKK Werra-Meissner,http://www.bkk-werra-meissner.de,1.8,"Bayern, Hessen",True,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False
+41,BKK Wirtschaft & Finanzen,http://www.bkk-wf.de/,1.69,"Baden-Württemberg, Bayern, Berlin, Brandenburg, Bremen, Hamburg, Hessen, Niedersachsen, Nordrhein-Westfalen, Rheinland-Pfalz, Saarland, Sachsen",True,True,True,True,True,True,True,False,True,True,True,True,True,False,False,False
+42,BKK ZF & Partner,http://www.bkk-zf-partner.de,1.45,"Baden-Württemberg, Bayern, Berlin, Brandenburg, Bremen, Hamburg, Hessen, Niedersachsen, Nordrhein-Westfalen, Rheinland-Pfalz, Saarland, Sachsen, Sachsen-Anhalt, Thüringen",True,True,True,True,True,True,True,False,True,True,True,True,True,True,False,True
+43,BKK_DürkoppAdler,http://www.bkk-da.de,1.29,Nordrhein-Westfalen,False,False,False,False,False,False,False,False,False,True,False,False,False,False,False,False
+44,BKK24,http://www.bkk24.de,1.79,bundesweit,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True
+45,Bosch BKK,http://www.bosch-bkk.de,1.5,"Baden-Württemberg, Bayern, Berlin, Brandenburg, Hamburg, Hessen, Mecklenburg-Vorpommern, Niedersachsen, Nordrhein-Westfalen, Rheinland-Pfalz, Saarland, Sachsen, Sachsen-Anhalt, Thüringen",True,True,True,True,False,True,True,True,True,True,True,True,True,True,False,True
+46,Continentale Betriebskrankenkasse,http://www.continentale-bkk.de,1.4,bundesweit,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True
+47,DAK-Gesundheit,http://www.dak.de,1.7,bundesweit,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True
+48,Debeka BKK,http://www.debeka-bkk.de,1.69,bundesweit,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True
+49,energie-Betriebskrankenkasse,http://www.energie-bkk.de,1.59,bundesweit,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True
+50,Handelskrankenkasse (hkk) ,http://www.hkk.de,0.98,bundesweit,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True
+51,Heimat Krankenkasse,http://www.heimat-krankenkasse.de,1.3,bundesweit,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True
+52,HEK - Hanseatische Krankenkasse,http://www.hek.de,1.3,bundesweit,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True
+53,IKK - Die Innovationskasse (IK),http://www.die-ik.de/,1.6,bundesweit,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True
+54,IKK Brandenburg und Berlin,http://www.ikkbb.de,1.77,"Berlin, Brandenburg",False,False,True,True,False,False,False,False,False,False,False,False,False,False,False,False
+55,IKK classic,http://www.ikk-classic.de,1.6,bundesweit,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True
+56,IKK gesund plus,http://www.ikk-gesundplus.de,1.1,bundesweit,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True
+57,IKK Südwest,http://www.ikk-suedwest.de,1.65,"Hessen, Rheinland-Pfalz, Saarland",False,False,False,False,False,False,True,False,False,False,True,True,False,False,False,False
+58,Kaufmännische Krankenkasse - KKH,http://www.kkh.de,1.5,bundesweit,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True
+59,KNAPPSCHAFT,http://www.knappschaft.de,1.6,bundesweit,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True
+60,mhplus Betriebskrankenkasse,http://www.mhplus.de,1.58,"Baden-Württemberg, Bayern, Berlin, Hamburg, Hessen, Mecklenburg-Vorpommern, Niedersachsen, Nordrhein-Westfalen, Rheinland-Pfalz, Sachsen, Sachsen-Anhalt, Schleswig-Holstein, Thüringen",True,True,True,False,False,True,True,True,True,True,True,False,True,True,True,True
+61,Novitas BKK,http://www.novitas-bkk.de,1.54,bundesweit,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True
+62,Pronova BKK,http://www.pronovabkk.de,1.7,bundesweit,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True
+63,R+V Betriebskrankenkasse,http://www.ruv-bkk.de,1.4,bundesweit,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True
+64,Salus BKK,http://www.salus-bkk.de,1.59,bundesweit,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True
+65,SECURVITA BKK,http://www.securvita.de,1.6,"Baden-Württemberg, Bayern, Berlin, Brandenburg, Hamburg, Hessen, Mecklenburg-Vorpommern, Niedersachsen, Nordrhein-Westfalen, Rheinland-Pfalz, Sachsen, Sachsen-Anhalt, Schleswig-Holstein, Thüringen",True,True,True,True,False,True,True,True,True,True,True,False,True,True,True,True
+66,Siemens-Betriebskrankenkasse (SBK),http://www.sbk.org,1.5,bundesweit,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True
+67,SKD BKK,http://www.skd-bkk.de,1.15,"Baden-Württemberg, Bayern, Berlin, Bremen, Hamburg, Hessen, Niedersachsen, Nordrhein-Westfalen, Saarland, Sachsen, Schleswig-Holstein",True,True,True,False,True,True,True,False,True,True,False,True,True,False,True,False
+68,Techniker Krankenkasse,http://www.tk.de,1.2,bundesweit,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True
+69,TUI BKK,http://www.tui-bkk.de/,1.5,bundesweit,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True
+70,VIACTIV Krankenkasse,http://www.viactiv.de,1.6,bundesweit,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True
+71,vivida bkk,http://www.vividabkk.de/,1.4,bundesweit,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True
+72,WMF Betriebskrankenkasse,http://www.wmf-bkk.de,1.6,bundesweit,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True
