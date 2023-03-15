@@ -1,6 +1,6 @@
 # Health-Insurance-Comparison-Germany (HIC_Ger)
 
-This project demonstrates how data about german health insurance fees can be scraped from the web, processed and visualized. Information about insurance fees comes from https://www.gkv-spitzenverband.de/service/krankenkassenliste/krankenkassen.jsp.
+This project demonstrates how data about german health insurance fees can be scraped from the web, processed and visualized. Information about insurance fees comes from https://www.gkv-spitzenverband.de/service/krankenkassenliste/krankenkassen.jsp. geojson file for cartographic visualizations is taken from https://github.com/isellsoap/deutschlandGeoJSON.
 
 Usage:
 
