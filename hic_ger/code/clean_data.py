@@ -1,9 +1,9 @@
 import numpy as np
 import pandas as pd
 
-fees_path = '../data/fees.json'
-out_path_providers = '../data/providers_cleaned.csv'
-out_path_states = '../data/states_cleaned.csv'
+fees_path = 'hic_ger/data/fees.json'
+out_path_providers = 'hic_ger/data/providers_cleaned.csv'
+out_path_states = 'hic_ger/data/states_cleaned.csv'
 
 ##########################################
 # Create dataframe with providers as rows
@@ -62,6 +62,5 @@ df_states = pd.DataFrame(index=states)
 df_states['state'] = states
 df_states['provider_count'] = np.sum(fees_df.iloc[:, 4:20], axis=0)
 df_states['avg_fee'] = [np.sum(fees_df['fee']*fees_df[state])/np.sum(fees_df[state]) for state in states]
-df_states['avg_services_count'] = [np.sum(fees_df['services_count']*fees_df[state])/np.sum(fees_df[state]) for state in states]
 
 df_states.to_csv(out_path_states)

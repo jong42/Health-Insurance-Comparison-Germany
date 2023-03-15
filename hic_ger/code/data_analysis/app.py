@@ -3,9 +3,9 @@ from dash import Dash, dcc, html
 import plotly.express as px
 import json
 
-providers_path = "../../data/providers_cleaned.csv"
-states_path = "../../data/states_cleaned.csv"
-states_map_path = "../../data/german_states.geo.json"
+providers_path = "hic_ger/data/providers_cleaned.csv"
+states_path = "hic_ger/data/states_cleaned.csv"
+states_map_path = "hic_ger/data/german_states.geo.json"
 df_prov = pd.read_csv(providers_path, index_col=0)
 df_states = pd.read_csv(states_path, index_col=0)
 
@@ -96,10 +96,10 @@ app.layout = html.Div(children=[
     ]),
     html.H3('Conclusion', className='row'),
     html.Div(
-        'The plots above show that a difference in fees exists between the providers. The highest fee of 1.8% is '
-        'charged by BKK VBU, the lowest fee of 0.8% is charged by BKK EUREGIO. The differences at state level in '
-        'average fees are negligible, however the number of available providers is slightly higher in the south of '
-        'Germany than in the north.',
+        'The plots above show that a difference in fees exists between the providers. The highest fee of 1.99% is '
+        'charged by BKK Exklusiv, the lowest fee of 0.8% is charged by BKK Pfaff. The differences at state level in '
+        'average fees are negligible, however the number of available providers is slightly higher in western Germany '
+        'than in eastern Germany',
         className='row'
     ),
     html.Div(className='bottomrow')
