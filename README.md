@@ -15,6 +15,6 @@ Usage:
     python hic_ger/clean_data.py
 
   - To run the dashboard:\
-    python hic_ger/data_analysis/app.py
+    python hic_ger/app.py
 
 
