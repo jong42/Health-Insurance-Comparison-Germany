@@ -4,7 +4,7 @@ This project demonstrates how data about german health insurance fees can be scr
 
 Usage:
 
-1. Create a new Python environment
+1. Create a new Python environment (Python 3.8 or newer)
 2. In that environment, run "pip install -r requirements.txt"
 3. In that environment, run one of the following commands in the command line:
 
