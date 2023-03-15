@@ -8,7 +8,7 @@ Usage:
 2. In that environment, run "pip install -r requirements.txt"
 3. In that environment, run one of the following commands in the command line:
 
-  - To scrape the data:\
+  - To scrape the data, navigate to hic_ger/code/data_collection and run:\
     scrapy crawl fees -O ../../data/fees.json 
 
   - To convert the data to csv files:\
