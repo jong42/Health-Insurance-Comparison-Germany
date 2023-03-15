@@ -44,6 +44,11 @@ for i, loc in enumerate(fees_df['location']):
         if state in loc or loc == ['bundesweit']:
             fees_df[state][i] = True
 
+# Get rid of Umlaute
+fees_df['Baden-Wuerttemberg'] = fees_df['Baden-Württemberg']
+fees_df['Thueringen'] = fees_df['Thüringen']
+fees_df = fees_df.drop(['Baden-Württemberg','Thüringen'], axis=1)
+
 # Convert fee to float type
 fees_df['fee'] = fees_df['fee'].str.replace(',','.')
 fees_df['fee'] = fees_df['fee'].astype(float)
@@ -54,9 +59,9 @@ fees_df.to_csv(out_path_providers)
 # Create df with states as rows
 ##################################
 
-states = ['Bayern', 'Baden-Württemberg', 'Berlin', 'Brandenburg', 'Bremen', 'Hamburg', 'Hessen',
+states = ['Bayern', 'Baden-Wuerttemberg', 'Berlin', 'Brandenburg', 'Bremen', 'Hamburg', 'Hessen',
                   'Mecklenburg-Vorpommern', 'Niedersachsen', 'Nordrhein-Westfalen', 'Rheinland-Pfalz', 'Saarland',
-                  'Sachsen', 'Sachsen-Anhalt', 'Schleswig-Holstein', 'Thüringen']
+                  'Sachsen', 'Sachsen-Anhalt', 'Schleswig-Holstein', 'Thueringen']
 
 df_states = pd.DataFrame(index=states)
 df_states['state'] = states
